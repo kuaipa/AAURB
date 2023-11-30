@@ -1,0 +1,25 @@
+Characteristic of this protocol:
+    Use 2 variables(received and delivered, linked lists) to register a message.
+    This 2 variables only store identifier of each msg.
+
+Details:
+    1st time received a msg:
+        forward
+        use hash to track a forwarded msg. (entry for each msg. The entry keeps the data and a record of who has forwarded this msg.)
+    If the msg is forwarded correctly, it can be delivered. Checking correction every time a new event is handled.
+
+
+
+Input msg and processes:
+
+Message:
+msgID: 1
+Message content: "Text Message"
+ProcessId(the beginning process): 0
+
+Process status:
+process 0: crash
+process 1: correct
+process 2: crash
+process 3: correct
+
